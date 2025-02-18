@@ -1,0 +1,28 @@
+Paleta de Cores
+Primária: Preto (Fundo Principal)
+Hex: #0D1117 RGB: rgb(13, 17, 23)
+Uso: Fundo geral para dar o tom escuro e elegante.
+
+Secundária: Cinza Escuro (Textos Secundários e Seções)
+Hex: #161B22 RGB: rgb(22, 27, 34)
+Uso: Diferenciação de seções ou elementos como caixas e menus.
+
+Detalhe: Cinza Claro (Textos e Linhas)
+Hex: #8B949E RGB: rgb(139, 148, 158)
+Uso: Textos principais e detalhes sutis no layout.
+
+Destaque: Azul Neon (Links, Botões, Animações)
+Hex: #58A6FF RGB: rgb(88, 166, 255)
+Uso: Elementos clicáveis, como botões, links e animações leves.
+
+Apoio: Verde Neon (Ênfase em Status ou Confirmado)
+Hex: #3FB950 RGB: rgb(63, 185, 80)
+Uso: Indicadores de sucesso, gráficos ou detalhes chamativos.
+
+Alerta: Vermelho Suave (Erros ou Avisos)
+Hex: #F85149 RGB: rgb(248, 81, 73)
+Uso: Alertas ou mensagens de erro.
+
+Toque Moderno: Roxo Escuro (Animações e Destaques Discretos)
+Hex: #6E40C9 RGB: rgb(110, 64, 201)
+Uso: Efeitos sutis e realces.

@@ -1,0 +1,558 @@
+@font-face { /*Puxando a fonte que será utilizada no projeto*/
+    font-family: Product Sans;
+    src: url(Fonts/Product\ Sans\ Regular.ttf)
+}
+
+@font-face { /*Puxando a fonte que será utilizada no projeto*/
+    font-family: Product Sans B;
+    src: url(Fonts/Product\ Sans\ Bold.ttf)
+}
+
+@font-face { /*Puxando a fonte que será utilizada no projeto*/
+    font-family: airstrike;
+    src: url(Fonts/airstrikebold.ttf)
+}
+
+@font-face { /*Puxando a fonte que será utilizada no projeto*/
+    font-family: BlackOps;
+    src: url(Fonts/BlackOpsOne-Regular.ttf)
+}
+
+*{ /*Para definir tudo que esta na página, se criarmos com * será setado na página inteira */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Product Sans B; /*Definindo que toda a fonte da página sera setada nesta*/
+    
+}
+
+img {
+    max-width: 100%; /* Para garantir que as imagens nunca ultrapassem a largura da tela */
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body::-webkit-scrollbar{
+    /*Para ocultar a barra de rolagem na lateral da página */
+    display: none;
+}
+
+#robbu-whatsapp-button{
+    z-index: 99;
+}
+
+/* Estamos chamando com #main pois estamos chamando um "ID", se fosse uma classe seria chamada com . */
+#main{
+    width: 100%;
+    height: 100vh;
+    background: rgb(13, 17, 23);
+}
+
+#main img .logo{
+    width: 15vw;
+}
+
+/* Navbar */
+.nav-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    padding: 0 5%;
+    background: rgba(0, 0, 0, 0.127);
+    z-index: 99;
+}
+
+.nav-container .logo {
+    width: 120px;
+    height: auto;
+}
+
+.nav-container a{ /*Para tratarmos apenas a tag A na nav*/
+    color:white;
+    text-decoration: none; /*Retirar o ____ quando tiver um link*/
+    font-size: 4vh;
+}
+
+.nav-menu{
+    display: flex;
+    gap: 15vw;/*Quando damos display: flex, fica tudo alinhado porém não tem espaçamento, os itens ficam "colados", o gap serve para criar um espaço entre os itens que estão na nav*/
+}
+
+/* Menu Mobile */
+.menu-icon {
+    display: none; /* Esconde o ícone do menu em desktop */
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Media Query para Mobile */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Mostra o ícone do menu em mobile */
+    }
+
+    .nav-menu {
+        display: none; /* Esconde o menu em mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.127);
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+
+    .nav-menu a {
+        margin: 10px 0;
+    }
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center; /*Deixar no centro da tela*/
+    width: 100%;
+    height: 100vh;
+    background:       
+    url('./Assets/bg-preto-1.jpg') no-repeat center center;
+    background-size: cover;}
+
+.hero h1 {
+    font-family: blackops;
+    font-size: 25vw; /*Para deixar a palavra FANTA em 1/4 da tela, fica responsiva para todo tipo de monitor*/
+    color: white;    
+    z-index: 1;
+}
+
+.hero h1 .different-font{
+    font-family: airstrike;
+    font-size: 32vw; /*Para deixar a palavra FANTA em 1/4 da tela, fica responsiva para todo tipo de monitor*/
+    color:white;    
+}
+
+#dev{
+    position: absolute; /*Posição está absolute pra dar o efeito de quando scroll na página ela ficar em lugares ja definidos*/
+    width: 30vw; /*Como estamos definindo o tamanho pelo ID ele ignora a restrição de tamanho que estava sendo dado pela classe hero*/
+    z-index: 2; /*Para ficar acima de alguns itens por isso é dado o "2"*/
+}
+
+#csharp{
+    position: absolute; /*Posição está absolute pra dar o efeito de quando scroll na página ela ficar em lugares ja definidos*/
+    width: 12vw; /*Como estamos definindo o tamanho pelo ID ele ignora a restrição de tamanho que estava sendo dado pela classe hero*/
+    top: 6vh; /*Por ser uma imagem que esta com a position absoluta, podemos setar o lugar q ela ficará na tela*/
+    left: 35vw;
+    z-index: 2; /*Para ficar acima de alguns itens por isso é dado o "2"*/
+}
+
+#css{
+    position: absolute; /*Posição está absolute pra dar o efeito de quando scroll na página ela ficar em lugares ja definidos*/
+    width: 25vw; /*Como estamos definindo o tamanho pelo ID ele ignora a restrição de tamanho que estava sendo dado pela classe hero*/
+    top: 65vh; /*Por ser uma imagem que esta com a position absoluta, podemos setar o lugar q ela ficará na tela aqui é altura*/
+    right: 29vw; /*Por ser uma imagem que esta com a position absoluta, podemos setar o lugar q ela ficará na tela aqui é largura*/
+    z-index: 3; /*Para ficar acima de alguns itens por isso é dado o "3" nesse caso a fanta*/
+}
+
+#php {
+    position: absolute; /*Posição está absolute pra dar o efeito de quando scroll na página ela ficar em lugares ja definidos*/
+    width: 12vw; /*Como estamos definindo o tamanho pelo ID ele ignora a restrição de tamanho que estava sendo dado pela classe hero*/
+    top: 10vh;  /*Por ser uma imagem que esta com a position absoluta, podemos setar o lugar q ela ficará na tela aqui é altura*/
+    left: 3vh; /*Por ser uma imagem que esta com a position absoluta, podemos setar o lugar q ela ficará na tela aqui é largura*/   
+    transform: rotate(-10deg); /* Usada para rotacionar a imagem, o deg significa o "angulo" pode se dizer "graus"*/
+}
+
+#python {
+    position: absolute; 
+    width: 18vw; 
+    top: 70vh;  
+    left: 80vw;  
+    max-width: 100%; /* Garante que a largura não ultrapasse 100% da tela */
+    max-height: 100%; /* Garante que a altura não ultrapasse 100% da tela */
+    transform: rotate(0deg);
+}
+
+#folhatec {
+    position: absolute; 
+    width: 25vw; 
+    top: 10vh;  
+    right: 2vw; 
+    transform: rotate(0deg);
+    z-index: 0;
+    opacity: 80%;
+    max-width: 100%; /* Garante que a largura não ultrapasse 100% da tela */
+    max-height: 100%; /* Garante que a altura não ultrapasse 100% da tela */
+}
+
+/* 🔹 MEDIA QUERY PARA MOBILE (TELAS MENORES QUE 768px) */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 25vw; /* Reduz a fonte para melhor adaptação */
+    }
+
+    .hero h1 .different-font {
+        font-size: 32vw; /* Mantém destaque mas reduz tamanho */
+    }
+
+    #dev {
+        width: 60vw;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -150%);
+    }
+
+    #csharp {
+        width: 25vw;
+        top: 52vh;
+        left: 20vw;
+        z-index: 2;
+    }
+
+    #css {
+        width: 52vw;
+        top: 80vh;
+        right: 5vw;
+    }
+
+    #php {
+        width: 15vw;
+        top: 20vh;
+        left: 5vw;
+    }
+
+    #python {
+        width: 25vw;
+        top: 20vh;
+        left: 70vw;
+    }
+
+    #folhatec {
+        width: 30vw;
+        top: 38vh;
+        rotate: -7deg;
+        right: 2vw;
+        opacity: 70%;
+    }
+}
+
+/*################## Segunda Seção Daqui Para Baixo ##################*/
+
+.two{
+    display: flex;
+    width: 100%;
+    height: 100vh; /*Height está em 100vh para ocupar o tamanho inteiro da tela*/
+    background: rgb(22, 27, 34)
+}
+
+.left-side, .right-side{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; /*Alinhar o item no centro vertical da tela*/
+    flex-direction: column; /*Por usar display flex, temos que usar isso para alinhar os itens em coluna verticalmente.*/
+    gap: 0vw;
+    width: 50vw;
+    height: 100vh;
+}
+
+.left-side svg{
+    margin-top: 50vh; /*vh para usar 50% da tela do usuário*/
+    width: 50vw;
+    transform: rotateX(50deg); /*Estamos rotacionando o svg para ficar no formato desejado*/
+}
+
+.right-side h2{
+    color: rgb(88, 166, 255);
+    font-size: 5vw;
+}
+
+.right-side p {
+    color: rgb(189, 189, 189);
+    font-size: clamp(1rem, 2vw, 3vh); /* Ajusta dinamicamente o tamanho da fonte */
+    line-height: 1.5; /* Mantém o espaçamento entre linhas equilibrado */
+    max-width: 90%; /* Evita que o texto ultrapasse a div */
+    text-align: justify;
+    overflow-wrap: break-word; /* Garante que palavras longas não estourem a largura */
+    word-wrap: break-word; /* Compatibilidade extra */
+}
+
+@media screen and (max-width: 768px) {
+    .two {
+        flex-direction: column; /* Alinha os itens em coluna */
+        height: auto; /* Permite que a altura aumente conforme o conteúdo */
+    }
+
+    .left-side, .right-side {
+        width: 100vw; /* Ocupa toda a largura da tela */
+        height: auto; /* Ajusta a altura automaticamente */
+        align-items: center; /* Centraliza o conteúdo */
+        text-align: center; /* Centraliza o texto */
+        padding: 20px; /* Adiciona espaçamento interno */
+    }
+
+    .left-side svg {
+        margin-top: 20px; /* Diminui a margem para telas menores */
+        width: 80vw; /* Reduz um pouco o tamanho do SVG */
+    }
+
+    .right-side h2 {
+        font-size: 6vw; /* Ajusta o tamanho do título */
+    }
+
+    .right-side p {
+        font-size: 4vw; /* Ajusta o tamanho do texto */
+        max-width: 90%; /* Mantém o texto dentro da área visível */
+        line-height: 1.6; /* Melhora a legibilidade */
+    }
+}
+
+
+/*################## Terceira Seção Daqui Para Baixo ##################*/
+
+.three {
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    height: 100vh;
+    gap: 5vh;
+    background: 
+        linear-gradient(rgba(22, 27, 34, 0.7), rgba(22, 27, 34, 0.2)), 
+        url('./Assets/bg-branco.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    background: white;
+    align-items: center;
+    width: 25vw;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+    height: 70vh;
+    margin-top: 10vh;
+    border-radius: 20px;
+    overflow: hidden; /* Para garantir que as imagens não ultrapassem o card */
+}
+
+.card h3 {
+    margin-top: 40vh;
+    font-size: 2vw;
+    color: black;
+    text-align: center; /* Centralizar o texto */
+}
+
+.card button {
+    font-size: 1vw;
+    border-radius: 30px;
+    border: none;
+    background-color: rgb(88, 166, 255);
+    color: white;
+    padding: 1.5vw 1.5vw;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #e54b3c;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.card img {
+    position: absolute;
+    top: 12%;
+    width: 88%;
+    height: 37%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 10px;
+}
+
+.monitor, .monitor1 {
+    position: absolute;
+    top: 0%;
+    width: 105%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 0;
+}
+
+#borges{
+    position: absolute; /* Devido ao position relative */
+    top: 12%;
+    width: 88%;
+    height: 37%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 10px; /* Ajuste o valor conforme necessário */
+}
+
+#bere {
+    position: absolute; /* Devido ao position relative */
+    top: 12%;
+    width: 88%;
+    height: 37%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 10px; /* Ajuste o valor conforme necessário */
+}
+
+
+/* Ajustes para mobile */
+@media screen and (max-width: 768px) {
+    .three {
+        flex-direction: column;
+        height: auto;
+        gap: 3vh;
+        padding: 20px 0;
+    }
+
+    .card {
+        width: 90vw;
+        height: 150vw;
+        padding: 30vw;
+        gap: 3vh;
+    }
+
+    .card h3 {
+        font-size: 5vw;
+        margin-top: 40vh;
+    }
+
+    .card button {
+        font-size: 4vw;
+        padding: 3vw;
+    }
+
+    .card img {
+        width: 77%;
+        height: 39%;
+    }
+
+    .monitor {
+        width: 90%;
+        height: 60%;
+    }
+}
+
+
+
+.for {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6) url('./Assets/bg-preto-1.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.left-side2, .right-side2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4vh;
+    width: 50%;
+    height: 100%;
+    padding-left: 5vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.right-side2 img {
+   
+    width: 100%;
+    position: absolute;    
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.left-side2 h4 {    
+    color: #fff;
+    font-size: 4vw;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.left-side2 p {
+    color: #f1f1f1;
+    font-size: 1.3vw;
+    line-height: 1.6;
+    width: 80%;
+    text-align: justify;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+.left-side2 a {
+    text-decoration: none;
+    color: #ff6f61;
+    font-weight: bold;
+}
+
+
+.left-side2 a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.left-side2 button {
+    font-size: 1.4vw; /* Aumentando o tamanho do botão */
+    border-radius: 30px;
+    border: none;
+    background-color:rgb(88, 166, 255); /* Cor do botão mais chamativa */
+    color: white;
+    padding: 1.5vw 3vw;
+    transition: all 0.4s ease;
+    margin-top: 2vh;
+    cursor: pointer;
+}
+
+.left-side2 button:hover {
+    background-color: #e54b3c; /* Escurecendo o botão no hover */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Brilho no hover */
+}
+
+.left-side2 img {
+    height: 6vh;
+    z-index: 0;
+}
+
+.left-side2 .instagram {
+    width: 25%;
+    margin-top: 2vh;
+}
+
+/* Adaptação para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .for {
+        flex-direction: column;
+        height: auto;
+    }
+    .left-side2, .right-side2 {
+        width: 100%;
+        height: auto;
+        padding: 5vh 5vw;
+    }
+    .left-side2 h4 {
+        font-size: 6vw;
+    }
+    .left-side2 p {
+        font-size: 3.5vw;
+    }
+    .left-side2 button {
+        font-size: 4vw;
+        padding: 3vw 6vw;
+    }
+}
